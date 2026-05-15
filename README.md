@@ -3,12 +3,15 @@
 `NeonTech` packages your tokenizer so you can use it directly in Python.
 
 ## Usage
+`NeonTech` is a Python package that ships your `rena1` tokeniser for easy usage:
 
 ```python
 from neontech import tokenisers
 
 # Load bundled tokenizer by name (what you asked for)
 tokeniser = tokenisers.load_tokeniser("rena1")
+# Load the bundled tokenizer
+tokeniser = tokenisers.default_tokeniser()
 
 encoded = tokeniser.encode("Hello from NeonTech")
 print(encoded.ids)
@@ -57,4 +60,8 @@ This repo now includes workflows:
 ```bash
 git tag v0.1.0
 git push origin v0.1.0
+It also supports loading custom tokenizer JSON files:
+
+```python
+custom = tokenisers.load_tokeniser("/path/to/tokenizer.json")
 ```
