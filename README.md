@@ -42,6 +42,24 @@ If you want to test first on TestPyPI:
 
 ```bash
 python -m twine upload --repository testpypi dist/*
+```
+
+## GitHub Actions release workflow
+
+This repo now includes workflows:
+
+- `.github/workflows/ci.yml`: builds package and runs `twine check` on pushes/PRs.
+- `.github/workflows/publish-pypi.yml`: publishes to PyPI when you push a version tag like `v0.1.0`.
+
+### One-time PyPI setup for GitHub publishing
+
+1. On PyPI, create a **Trusted Publisher** for this GitHub repository.
+2. In GitHub, keep the `pypi` environment (used by the workflow).
+3. Bump `version` in `pyproject.toml`, commit, tag, and push:
+
+```bash
+git tag v0.1.0
+git push origin v0.1.0
 It also supports loading custom tokenizer JSON files:
 
 ```python
