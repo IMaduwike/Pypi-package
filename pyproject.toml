@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "NeonTech"
+version = "0.1.0"
+description = "NeonTech tokeniser package"
+readme = "README.md"
+authors = [{ name = "NeonTech" }]
+requires-python = ">=3.9"
+dependencies = [
+  "tokenizers>=0.15.0"
+]
+keywords = ["tokenizer", "nlp", "neontech"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+]
+
+[project.urls]
+Homepage = "https://pypi.org/project/NeonTech/"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+neontech = ["rena1/tokenizer.json"]
